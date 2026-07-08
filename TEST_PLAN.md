@@ -1,15 +1,18 @@
-# Test Plan — RC1 Build 008
+# Test Plan — RC1 Build 010
 
 ## Prueba principal
-1. Abrir Base de datos GT7.
-2. Desplegar un fabricante sin usar filtro.
-3. Añadir varios coches de ese fabricante al Garaje GT7.
-4. Confirmar que el desplegable permanece abierto.
-5. Cerrar manualmente el fabricante.
-6. Confirmar que permanece cerrado hasta que el usuario lo abra de nuevo.
+1. Limpiar caché o abrir con `?build=rc1-010`.
+2. Entrar en Base de datos GT7.
+3. Añadir varios coches al Garaje GT7 manteniendo desplegables abiertos.
+4. Crear campeonato.
+5. Definir reglas generales antes del calendario.
+6. Añadir circuitos y variantes.
+7. Personalizar una carrera y dejar otra con reglamento general.
+8. Asignar coche a cada piloto desde el Garaje filtrado.
+9. Abrir el campeonato y revisar pilotos, circuitos, reglas y particularidades.
+10. Registrar resultados de todos los pilotos.
+11. Revisar clasificación.
+12. Probar editar, duplicar, archivar y eliminar campeonato.
 
-## Regresión
-- Crear campeonato.
-- Seleccionar coches de pilotos desde Garaje filtrado.
-- Añadir calendario.
-- Registrar resultados de todos los pilotos.
+## Criterio de aceptación
+La Build 010 puede pasar a RC1 Final si permite preparar una temporada completa sin bloqueos críticos.

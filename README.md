@@ -1,7 +1,12 @@
-# GT7 Championship Manager — RC1 Build 008
+# GT7 Championship Manager — RC1 Build 010
 
-Build orientada a mejorar la selección masiva de coches del Garaje GT7.
+Build candidata previa a RC1 Final.
 
-Sube el contenido de esta carpeta al repositorio GitHub Pages y abre la app con:
+## Objetivo
+Validar que la app ya permite empezar un campeonato completo: Garaje GT7, creación de campeonato, selección de pilotos/coches, calendario, reglas, Race Control, registro de resultados y clasificación.
 
-`?build=rc1-008`
+## Instalación
+Sube el contenido de esta carpeta al repositorio GitHub Pages y abre la URL con `?build=rc1-010`.
+
+## Firma
+Designed by JDM & ChatGPT.
