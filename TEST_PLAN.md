@@ -1,34 +1,25 @@
-# Test Plan — RC1 Build 003
+# Test Plan — RC1 Build 004
 
-## 1. Publicación
-- Subir todo el contenido de la carpeta al repositorio.
-- Abrir con `?build=rc1-003`.
-- Comprobar que en Ajustes aparece RC1 Build 003.
+## Prueba 1 — Reglas antes de calendario
+1. Crear nuevo campeonato.
+2. Confirmar que el paso Reglas aparece antes de Pilotos/Calendario.
+3. Seleccionar plantilla Sprint, Resistencia o Sophy.
+4. Confirmar que los campos cambian correctamente.
 
-## 2. Coches GT7 y Garaje
-- Entrar en “Coches GT7”.
-- Buscar Ford, Porsche, Ferrari o BMW.
-- Añadir varios coches al Garaje GT7.
-- Entrar en “Garaje” y verificar que aparecen sólo los coches seleccionados.
+## Prueba 2 — Carrera con reglamento general
+1. Añadir una carrera sin marcar Personalizar reglamento.
+2. Confirmar que aparece con distintivo General.
+3. Abrir Race Control y comprobar que usa las reglas generales.
 
-## 3. Crear campeonato
-- Crear campeonato nuevo.
-- Elegir categoría y subcategoría.
-- En el paso de pilotos, pulsar “Coche”.
-- Seleccionar un coche del Garaje.
-- Confirmar que vuelve al constructor.
+## Prueba 3 — Carrera personalizada
+1. Añadir otra carrera marcando Personalizar reglamento.
+2. Cambiar tipo de salida, IA o consumo.
+3. Confirmar que aparece con distintivo Personalizado.
+4. Abrir Race Control y comprobar que muestra las reglas personalizadas.
 
-## 4. Calendario
-- Añadir varios circuitos.
-- Comprobar que cada circuito permite elegir variante/layout.
-- Añadir una particularidad a una carrera.
-
-## 5. Vista campeonato
-- Abrir el campeonato creado.
-- Confirmar que se muestran pilotos, coches, calendario, variantes, reglas y particularidades.
-
-## 6. Race Control
-- Abrir Race Control.
-- Confirmar que indica claramente la carrera activa.
-- Registrar resultado.
-- Verificar que se marca como disputada y avanza a la siguiente carrera.
+## Prueba 4 — Flujo completo
+1. Crear campeonato.
+2. Asignar coches desde Garaje GT7.
+3. Añadir al menos 2 circuitos.
+4. Registrar resultado de la primera carrera.
+5. Comprobar que la siguiente carrera queda preparada.

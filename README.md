@@ -1,20 +1,18 @@
-# GT7 Championship Manager — RC1 Build 003
+# GT7 Championship Manager — RC1 Build 004
 
-Build 003 incorpora las mejoras solicitadas tras probar la Build 002:
+Build 004 centra el trabajo en el flujo de reglamentos y calendario:
 
-- Pestaña **Coches GT7** separada del **Garaje GT7**.
-- Los coches del garaje se seleccionan desde la base de datos GT7.
-- Cada coche incluye PR base y potencia cuando está disponible.
-- En el constructor de campeonato se elige el coche de cada piloto desde el Garaje GT7.
-- Tras confirmar un coche, la app vuelve al paso de creación del campeonato.
-- El calendario se crea carrera a carrera, con circuito y variante/layout.
-- Al abrir un campeonato se muestra la relación de pilotos, coches, calendario, variantes, reglas y particularidades.
-- Race Control indica de forma explícita a qué carrera/circuito/variante se aplica “Registrar resultado”.
+- El paso **Reglas** aparece antes que **Calendario**.
+- Se añaden plantillas de reglamento reutilizables.
+- Cada carrera hereda por defecto el reglamento general.
+- Cada carrera puede activar **Reglamento personalizado** sólo si se necesita.
+- Se añaden variables GT7: tipo de salida e IA estándar/Sophy.
+- Race Control muestra claramente si la carrera usa reglamento general o personalizado.
 
 ## Instalación
+Sube todo el contenido de esta carpeta al repositorio de GitHub Pages y abre la app con:
 
-Subir todo el contenido de esta carpeta al repositorio GitHub Pages. Abrir con:
+`?build=rc1-004`
 
-`https://jdm1822.github.io/GT7-Championship-Manager/?build=rc1-003`
-
-Si se ve una versión antigua, borrar la PWA del iPhone y limpiar datos de Safari para `github.io`.
+## Nota de catálogo
+La base de datos de coches y circuitos se ha ampliado en las builds previas y mantiene estructura preparada para seguir incorporando coches GT7 con PR/potencia. La validación del catálogo completo continúa como incidencia abierta de alta prioridad.
