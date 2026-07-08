@@ -1,9 +1,9 @@
 # Changelog
 
-## RC1 Build 005
-- Recuperada edición, duplicado, archivado y eliminación de campeonatos.
-- Separación GT7 DB / Garaje GT7.
-- Filtro inteligente al elegir coche para piloto.
-- Filtros configurables para campeonatos abiertos por año, PR y país.
-- Base de coches ampliada con PR base y potencia cuando se dispone de datos.
-- Circuitos de asfalto con variantes/layouts.
+## RC1 Build 006
+- Mejora: añadir coches al Garaje GT7 sin perder filtro ni listado abierto.
+- Mejora: resultado completo por todos los pilotos, no sólo jugador.
+- Mejora: validación de posiciones repetidas o fuera de rango.
+- Mejora: clasificación basada en resultados completos.
+- Mejora: persistencia migrada desde builds anteriores.
+- Pendiente: integración del catálogo completo oficial de coches GT7.
