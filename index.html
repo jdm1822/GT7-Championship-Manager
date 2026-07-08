@@ -3,69 +3,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#050914" />
+  <meta name="theme-color" content="#07111f" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="GT7 CM" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <title>GT7 Championship Manager</title>
-  <style>
-    :root{--bg:#050914;--panel:#0d1424cc;--panel2:#131d32;--line:#263755;--text:#edf4ff;--muted:#8ea0bc;--accent:#5dd6ff;--gold:#ffd166;--red:#ff5f73;--green:#77e89c;--shadow:0 18px 50px rgba(0,0,0,.45);--radius:22px}
-    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 20% 0%,#213b68 0,#050914 32%,#03050b 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Arial,sans-serif;min-height:100dvh;overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.05),transparent 35%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:screen;opacity:.35}.app{max-width:980px;margin:0 auto;padding:env(safe-area-inset-top) 14px calc(90px + env(safe-area-inset-bottom));}.top{padding:22px 4px 12px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand small{display:block;color:var(--accent);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:11px}.brand h1{margin:.18rem 0 0;font-size:28px;letter-spacing:-.04em}.chip{border:1px solid var(--line);background:rgba(255,255,255,.05);padding:9px 12px;border-radius:999px;color:var(--muted);font-size:13px;white-space:nowrap}.hero{background:linear-gradient(145deg,rgba(24,43,79,.95),rgba(9,13,24,.9));border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(93,214,255,.25),transparent 65%)}.hero h2{margin:0;font-size:21px}.hero p{margin:8px 0 0;color:var(--muted);line-height:1.35}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:13px}.stat b{display:block;font-size:21px}.stat span{font-size:12px;color:var(--muted)}.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(3,5,11,.78);backdrop-filter:blur(22px);border-top:1px solid rgba(255,255,255,.1);padding:8px 8px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;z-index:20}.tabbar{display:flex;gap:6px;width:min(960px,100%)}button{font:inherit;color:inherit}.tab{flex:1;border:0;border-radius:16px;background:transparent;color:var(--muted);padding:10px 4px;font-size:11px}.tab.active{background:rgba(93,214,255,.14);color:var(--text);border:1px solid rgba(93,214,255,.25)}.section{display:none;margin-top:16px}.section.active{display:block}.card{background:var(--panel);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:12px 0}.card h3{margin:0 0 12px;font-size:18px}.row{display:flex;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.07);padding:11px 0}.row:first-of-type{border-top:0}.muted{color:var(--muted);font-size:13px}.pill{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);font-size:12px}.btn{border:0;border-radius:16px;background:linear-gradient(135deg,#37c8ff,#2764ff);padding:12px 14px;color:white;font-weight:800;box-shadow:0 10px 25px rgba(39,100,255,.28)}.btn.secondary{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);box-shadow:none;color:var(--text)}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:12px;color:var(--muted)}input,select,textarea{width:100%;background:#081020;border:1px solid #253958;color:var(--text);border-radius:14px;padding:11px;font:inherit}table{width:100%;border-collapse:collapse;overflow:hidden}th,td{text-align:left;padding:10px 7px;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.pos{font-weight:900;color:var(--gold)}.race-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.danger{color:var(--red)}.ok{color:var(--green)}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.small{font-size:12px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:flex-end;z-index:30}.modal.active{display:flex}.sheet{width:100%;max-width:980px;margin:0 auto;background:#081020;border-radius:28px 28px 0 0;border:1px solid rgba(255,255,255,.14);padding:18px 14px calc(18px + env(safe-area-inset-bottom));max-height:88dvh;overflow:auto}@media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr)}.modal{align-items:center}.sheet{border-radius:28px;max-height:80dvh}.tab{font-size:13px}.brand h1{font-size:34px}}
-  </style>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<div class="noise"></div><main class="app">
-  <header class="top"><div class="brand"><small>Race Control</small><h1>GT7 Championship Manager</h1></div><div class="chip" id="saveState">Guardado local</div></header>
-  <section class="hero"><h2 id="seasonTitle">Temporada 1 · Gr.3 World Series</h2><p>Campeonato offline para Gran Turismo 7: tú contra 19 IA, 10 pruebas, BoP, clima, pole, vuelta rápida y gestión especial para Nordschleife.</p><div class="grid"><div class="stat"><b id="leaderName">—</b><span>Líder</span></div><div class="stat"><b id="leaderPts">0</b><span>Puntos</span></div><div class="stat"><b id="nextRace">—</b><span>Próxima carrera</span></div><div class="stat"><b>20</b><span>Pilotos</span></div></div></section>
-  <section id="home" class="section active"><div class="card"><h3>Panel principal</h3><div class="row"><div><b>Estado del campeonato</b><div class="muted" id="homeStatus">Sin resultados todavía</div></div><button class="btn" onclick="showTab('results')">Añadir resultado</button></div><div class="row"><div><b>Formato Nordschleife</b><div class="muted">Sprint 1 vuelta con parrilla sorteada + carrera 3 vueltas según sprint</div></div><span class="pill">Especial NS</span></div></div><div class="card"><h3>Próximas pruebas</h3><div id="upcoming"></div></div></section>
-  <section id="calendar" class="section"><div class="card"><div class="race-title"><h3>Calendario</h3><button class="btn secondary" onclick="openCalendarEditor()">Editar</button></div><div id="calendarList"></div></div></section>
-  <section id="drivers" class="section"><div class="card"><div class="race-title"><h3>Pilotos y BoP</h3><button class="btn secondary" onclick="openDriversEditor()">Editar pilotos</button></div><div id="driversList"></div></div></section>
-  <section id="standings" class="section"><div class="card"><h3>Clasificación general</h3><div id="standingsTable"></div></div><div class="card"><h3>Estadísticas</h3><div id="statsTable"></div></div></section>
-  <section id="results" class="section"><div class="card"><h3>Introducir resultado</h3><div class="field"><label>Carrera</label><select id="raceSelect"></select></div><div class="two"><div class="field"><label>Pole</label><select id="poleSelect"></select></div><div class="field"><label>Vuelta rápida</label><select id="flSelect"></select></div></div><div class="field"><label>Orden final / resultado</label><textarea id="resultText" rows="10" placeholder="Una línea por piloto, en orden de llegada. Puedes escribir sólo los números:&#10;1&#10;7&#10;3&#10;...&#10;&#10;o nombres si prefieres."></textarea></div><button class="btn" onclick="saveResult()">Guardar resultado</button><button class="btn secondary" style="margin-left:8px" onclick="fillExample()">Ejemplo</button><p class="muted small">Puntos GT: 25, 20, 16, 13, 11, 10, 9... hasta 1 punto para el 18º. Pole +1 y vuelta rápida +1.</p></div></section>
-  <section id="settings" class="section"><div class="card"><h3>Datos y mantenimiento</h3><div class="row"><div><b>Exportar temporada</b><div class="muted">Copia de seguridad en JSON</div></div><button class="btn secondary" onclick="exportData()">Exportar</button></div><div class="row"><div><b>Importar temporada</b><div class="muted">Pega aquí una copia JSON guardada</div></div></div><textarea id="importBox" rows="5" placeholder="Pega aquí el JSON exportado"></textarea><div style="margin-top:10px"><button class="btn secondary" onclick="importData()">Importar</button><button class="btn secondary danger" onclick="resetData()">Reiniciar</button></div></div></section>
-</main>
-<nav class="tabs"><div class="tabbar"><button class="tab active" data-tab="home" onclick="showTab('home')">Inicio</button><button class="tab" data-tab="calendar" onclick="showTab('calendar')">Calendario</button><button class="tab" data-tab="drivers" onclick="showTab('drivers')">Pilotos</button><button class="tab" data-tab="standings" onclick="showTab('standings')">Clasif.</button><button class="tab" data-tab="results" onclick="showTab('results')">Resultados</button><button class="tab" data-tab="settings" onclick="showTab('settings')">Ajustes</button></div></nav>
-<div class="modal" id="modal"><div class="sheet"><div class="race-title"><h3 id="modalTitle">Editor</h3><button class="btn secondary" onclick="closeModal()">Cerrar</button></div><div id="modalBody"></div></div></div>
-<script>
-const STORE='gt7cm_v110';
-const points=[25,20,16,13,11,10,9,8,7,6,5,4,3,2,1,1,1,1,0,0];
-const defaultDrivers=['JDM','Sophy Alpha','Sophy Bravo','Sophy Carbon','Sophy Delta','Sophy Eclipse','Sophy Falcon','Sophy Ghost','Sophy Hyper','Sophy Ion','Sophy Joker','Sophy Knight','Sophy Legend','Sophy Matrix','Sophy Nova','Sophy Orion','Sophy Pulse','Sophy Quartz','Sophy Raven','Sophy Striker'];
-const defaultCalendar=[
- {name:'Trial Mountain',laps:8,weather:'Variable',type:'Qualy + Carrera'},
- {name:'Deep Forest Raceway',laps:9,weather:'Seco/nublado',type:'Qualy + Carrera'},
- {name:'Grand Valley Highway 1',laps:7,weather:'Variable',type:'Qualy + Carrera'},
- {name:'Spa-Francorchamps',laps:6,weather:'Lluvia posible',type:'Qualy + Carrera'},
- {name:'Suzuka Circuit',laps:7,weather:'Variable',type:'Qualy + Carrera'},
- {name:'Fuji Speedway',laps:8,weather:'Seco',type:'Qualy + Carrera'},
- {name:'Interlagos',laps:9,weather:'Variable',type:'Qualy + Carrera'},
- {name:'Watkins Glen',laps:8,weather:'Seco/nublado',type:'Qualy + Carrera'},
- {name:'Le Mans',laps:4,weather:'Lluvia posible',type:'Qualy + Carrera'},
- {name:'Nürburgring Nordschleife',laps:'Sprint 1 + Carrera 3',weather:'Variable',type:'Sprint + Carrera'}
-];
-let data=load();
-function load(){try{return JSON.parse(localStorage.getItem(STORE))||fresh()}catch(e){return fresh()}}
-function fresh(){return{season:'Temporada 1 · Gr.3 World Series',drivers:defaultDrivers.map((n,i)=>({id:i+1,name:n,team:i===0?'JDM Racing':'IA GT Team',car:'Gr.3',power:100,weight:100})),calendar:defaultCalendar,results:{}}}
-function save(){localStorage.setItem(STORE,JSON.stringify(data));document.getElementById('saveState').textContent='Guardado '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});render()}
-function showTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));render()}
-function calc(){let rows=data.drivers.map(d=>({id:d.id,name:d.name,pts:0,wins:0,podiums:0,poles:0,fl:0,entered:0}));let map=Object.fromEntries(rows.map(r=>[r.id,r]));Object.values(data.results).forEach(r=>{(r.order||[]).forEach((id,idx)=>{if(map[id]){map[id].pts+=points[idx]||0;map[id].entered++; if(idx===0)map[id].wins++; if(idx<3)map[id].podiums++;}}); if(map[r.pole]){map[r.pole].pts+=1;map[r.pole].poles++} if(map[r.fastest]){map[r.fastest].pts+=1;map[r.fastest].fl++}});rows.sort((a,b)=>b.pts-a.pts||b.wins-a.wins||b.podiums-a.podiums);return rows}
-function render(){document.getElementById('seasonTitle').textContent=data.season;const st=calc(), leader=st[0];document.getElementById('leaderName').textContent=leader?.name||'—';document.getElementById('leaderPts').textContent=leader?.pts||0;const done=Object.keys(data.results).length;document.getElementById('nextRace').textContent=data.calendar[done]?.name||'Finalizado';document.getElementById('homeStatus').textContent=done?`${done}/10 carreras disputadas`:'Sin resultados todavía';renderUpcoming();renderCalendar();renderDrivers();renderStandings(st);renderResultSelectors()}
-function renderUpcoming(){let done=Object.keys(data.results).length;document.getElementById('upcoming').innerHTML=data.calendar.slice(done,done+3).map((r,i)=>`<div class="row"><div><b>${done+i+1}. ${r.name}</b><div class="muted">${r.type} · ${r.laps} vueltas · ${r.weather}</div></div><span class="pill">${r.name.includes('Nord')?'NS':'Gr.3'}</span></div>`).join('')||'<p class="muted">Temporada completada.</p>'}
-function renderCalendar(){document.getElementById('calendarList').innerHTML=data.calendar.map((r,i)=>`<div class="row"><div><b>${i+1}. ${r.name}</b><div class="muted">${r.type} · ${r.laps} · ${r.weather}</div></div><span class="pill ${data.results[i]?'ok':''}">${data.results[i]?'Completada':'Pendiente'}</span></div>`).join('')}
-function renderDrivers(){document.getElementById('driversList').innerHTML=data.drivers.map(d=>`<div class="row"><div><b>${d.id}. ${d.name}</b><div class="muted">${d.team} · ${d.car}</div></div><span class="pill">P ${d.power}% · W ${d.weight}%</span></div>`).join('')}
-function renderStandings(rows){document.getElementById('standingsTable').innerHTML='<table><thead><tr><th>#</th><th>Piloto</th><th>Pts</th><th>Vic</th><th>Pod</th></tr></thead><tbody>'+rows.map((r,i)=>`<tr><td class="pos">${i+1}</td><td>${r.name}</td><td><b>${r.pts}</b></td><td>${r.wins}</td><td>${r.podiums}</td></tr>`).join('')+'</tbody></table>';document.getElementById('statsTable').innerHTML='<table><thead><tr><th>Piloto</th><th>Poles</th><th>VR</th><th>Salidas</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r.name}</td><td>${r.poles}</td><td>${r.fl}</td><td>${r.entered}</td></tr>`).join('')+'</tbody></table>'}
-function renderResultSelectors(){const rs=document.getElementById('raceSelect'); if(!rs)return;rs.innerHTML=data.calendar.map((r,i)=>`<option value="${i}">${i+1}. ${r.name}${data.results[i]?' · editar':''}</option>`).join('');['poleSelect','flSelect'].forEach(id=>document.getElementById(id).innerHTML='<option value="">—</option>'+data.drivers.map(d=>`<option value="${d.id}">${d.id}. ${d.name}</option>`).join(''))}
-function saveResult(){const idx=document.getElementById('raceSelect').value;let lines=document.getElementById('resultText').value.split(/\n+/).map(x=>x.trim()).filter(Boolean);let order=lines.map(x=>{let num=parseInt(x,10); if(num && data.drivers.find(d=>d.id===num))return num;let d=data.drivers.find(d=>d.name.toLowerCase()===x.toLowerCase());return d?.id}).filter(Boolean);order=[...new Set(order)]; if(order.length<1){alert('Introduce al menos un piloto en el orden final.');return}data.results[idx]={order,pole:+document.getElementById('poleSelect').value||null,fastest:+document.getElementById('flSelect').value||null,at:new Date().toISOString()};document.getElementById('resultText').value='';save();alert('Resultado guardado')}
-function fillExample(){document.getElementById('resultText').value=data.drivers.map(d=>d.id).sort(()=>Math.random()-.5).join('\n')}
-function openDriversEditor(){document.getElementById('modalTitle').textContent='Editar pilotos y BoP';document.getElementById('modalBody').innerHTML=data.drivers.map(d=>`<div class="card"><div class="field"><label>Piloto ${d.id}</label><input id="dn${d.id}" value="${d.name}"></div><div class="two"><div class="field"><label>Potencia %</label><input id="dp${d.id}" type="number" value="${d.power}"></div><div class="field"><label>Peso %</label><input id="dw${d.id}" type="number" value="${d.weight}"></div></div></div>`).join('')+'<button class="btn" onclick="saveDriversEditor()">Guardar pilotos</button>';document.getElementById('modal').classList.add('active')}
-function saveDriversEditor(){data.drivers.forEach(d=>{d.name=document.getElementById('dn'+d.id).value||d.name;d.power=+document.getElementById('dp'+d.id).value||100;d.weight=+document.getElementById('dw'+d.id).value||100});closeModal();save()}
-function openCalendarEditor(){document.getElementById('modalTitle').textContent='Editar calendario';document.getElementById('modalBody').innerHTML=data.calendar.map((r,i)=>`<div class="card"><div class="field"><label>Prueba ${i+1}</label><input id="cn${i}" value="${r.name}"></div><div class="two"><div class="field"><label>Vueltas/Formato</label><input id="cl${i}" value="${r.laps}"></div><div class="field"><label>Clima</label><input id="cw${i}" value="${r.weather}"></div></div></div>`).join('')+'<button class="btn" onclick="saveCalendarEditor()">Guardar calendario</button>';document.getElementById('modal').classList.add('active')}
-function saveCalendarEditor(){data.calendar.forEach((r,i)=>{r.name=document.getElementById('cn'+i).value;r.laps=document.getElementById('cl'+i).value;r.weather=document.getElementById('cw'+i).value});closeModal();save()}
-function closeModal(){document.getElementById('modal').classList.remove('active')}
-function exportData(){const txt=JSON.stringify(data,null,2);navigator.clipboard?.writeText(txt);document.getElementById('importBox').value=txt;alert('Exportado y copiado al portapapeles')}
-function importData(){try{data=JSON.parse(document.getElementById('importBox').value);save();alert('Importado')}catch(e){alert('JSON no válido')}}
-function resetData(){if(confirm('¿Reiniciar toda la temporada?')){data=fresh();save()}}
-if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}render();
-</script>
-</body></html>
+  <div id="app" class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">v0.5 · Project build</p>
+        <h1>GT7 Championship Manager</h1>
+        <p class="subtitle">Tu modo campeonato offline para Gran Turismo 7.</p>
+      </div>
+      <button id="quickSave" class="pill ghost">Guardar</button>
+    </header>
+
+    <main>
+      <section id="home" class="screen active">
+        <div class="dashboard-grid">
+          <article class="glass card-wide">
+            <p class="eyebrow">Continuar</p>
+            <h2 id="activeTitle">Sin campeonato activo</h2>
+            <p id="activeMeta" class="muted">Crea un campeonato para empezar.</p>
+            <div class="actions">
+              <button class="primary" data-nav="championships">Mis campeonatos</button>
+              <button class="secondary" data-nav="create">Crear campeonato</button>
+            </div>
+          </article>
+          <article class="glass stat"><span id="statChampionships">0</span><small>campeonatos</small></article>
+          <article class="glass stat"><span id="statRaces">0</span><small>carreras</small></article>
+        </div>
+
+        <div class="menu-grid">
+          <button class="menu-tile" data-nav="championships"><b>🏆 Mis campeonatos</b><span>Gr.3, Gr.4, VGT, Road Cars...</span></button>
+          <button class="menu-tile" data-nav="create"><b>➕ Crear campeonato</b><span>Asistente de temporada</span></button>
+          <button class="menu-tile" data-nav="library"><b>📚 Biblioteca</b><span>Categorías, subcategorías y reglamentos</span></button>
+          <button class="menu-tile" data-nav="settings"><b>⚙️ Ajustes</b><span>Exportar, importar y reset</span></button>
+        </div>
+      </section>
+
+      <section id="championships" class="screen">
+        <div class="screen-head"><button class="back" data-nav="home">←</button><h2>Mis campeonatos</h2></div>
+        <div id="championshipList" class="list"></div>
+        <button class="primary full" data-nav="create">Crear nuevo campeonato</button>
+      </section>
+
+      <section id="create" class="screen">
+        <div class="screen-head"><button class="back" data-nav="home">←</button><h2>Crear campeonato</h2></div>
+        <form id="createForm" class="glass form">
+          <label>Nombre del campeonato<input name="name" required value="Gr.3 World Series" /></label>
+          <label>Temporada<input name="season" value="2026" /></label>
+          <label>Categoría<select name="category" id="categorySelect"></select></label>
+          <label>Nueva categoría opcional<input name="newCategory" placeholder="Ej. Hypercars" /></label>
+          <label>Subcategoría / copa<input name="subcategory" placeholder="Ej. Ferrari F40 Cup, JDM 90s, FIA GT3" /></label>
+          <label>Número de pilotos<input name="drivers" type="number" min="2" max="20" value="20" /></label>
+          <label>Número de carreras<input name="races" type="number" min="1" max="30" value="10" /></label>
+          <label>Plantilla GT7<select name="ruleTemplate" id="ruleSelect"></select></label>
+          <label class="switch"><input name="nord" type="checkbox" checked /> Activar formato Nordschleife: sprint 1 vuelta + carrera 3 vueltas</label>
+          <button class="primary full" type="submit">Crear campeonato</button>
+        </form>
+      </section>
+
+      <section id="detail" class="screen">
+        <div class="screen-head"><button class="back" data-nav="championships">←</button><h2 id="detailTitle">Campeonato</h2></div>
+        <div id="detailMeta" class="chips"></div>
+        <div class="tabs">
+          <button class="tab active" data-tab="overview">Resumen</button>
+          <button class="tab" data-tab="calendar">Calendario</button>
+          <button class="tab" data-tab="drivers">Pilotos</button>
+          <button class="tab" data-tab="gt7">Ajustes GT7</button>
+          <button class="tab" data-tab="standings">Clasificación</button>
+        </div>
+        <div id="tabContent" class="tab-content"></div>
+      </section>
+
+      <section id="library" class="screen">
+        <div class="screen-head"><button class="back" data-nav="home">←</button><h2>Biblioteca</h2></div>
+        <article class="glass">
+          <h3>Categorías base</h3>
+          <div id="libraryCategories" class="chips"></div>
+        </article>
+        <article class="glass">
+          <h3>Subcategorías sugeridas</h3>
+          <p class="muted">La subcategoría será siempre editable al crear cada campeonato.</p>
+          <div id="librarySubs" class="chips"></div>
+        </article>
+        <article class="glass">
+          <h3>Plantillas de reglamento</h3>
+          <div id="libraryRules" class="rule-list"></div>
+        </article>
+      </section>
+
+      <section id="settings" class="screen">
+        <div class="screen-head"><button class="back" data-nav="home">←</button><h2>Ajustes</h2></div>
+        <article class="glass">
+          <h3>Datos</h3>
+          <p class="muted">Todo se guarda localmente en este dispositivo.</p>
+          <div class="actions vertical">
+            <button id="exportBtn" class="secondary">Exportar temporada</button>
+            <label class="secondary file-label">Importar temporada<input id="importInput" type="file" accept="application/json" hidden /></label>
+            <button id="resetBtn" class="danger">Borrar todos los datos</button>
+          </div>
+        </article>
+        <article class="glass"><h3>Versión</h3><p class="muted">GT7 Championship Manager v0.5.0</p></article>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-nav="home" class="active">Inicio</button>
+      <button data-nav="championships">Campeonatos</button>
+      <button data-nav="create">Crear</button>
+      <button data-nav="library">Biblioteca</button>
+    </nav>
+  </div>
+
+  <template id="driverRowTemplate">
+    <div class="driver-row">
+      <span class="pos"></span>
+      <input class="driver-name" />
+      <input class="driver-car" placeholder="Coche" />
+      <input class="driver-bop" placeholder="BoP" />
+    </div>
+  </template>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
