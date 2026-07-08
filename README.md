@@ -1,12 +1,7 @@
-# GT7 Championship Manager — RC1 Build 006
+# GT7 Championship Manager — RC1 Build 007
 
-Build centrada en flujo de garaje y registro de resultados.
+PWA para iPhone orientada a gestionar campeonatos offline de Gran Turismo 7.
 
-## Cambios principales
-- La Base de datos GT7 conserva el filtro activo al añadir/quitar coches del Garaje GT7.
-- Registro de resultado completo por todos los pilotos del campeonato.
-- Clasificación calculada a partir de los resultados completos.
-- Migración automática desde stores locales de builds anteriores.
+Esta build refuerza la base de datos de coches y añade el editor de filtros para subcategorías abiertas como American Classics, Europe vs Japan 90s o Deportivos Modernos.
 
-## Nota
-El catálogo completo de coches GT7 sigue en progreso. Esta build mantiene la base ampliada y la estructura preparada para cargar el catálogo completo.
+Sube el contenido de esta carpeta al repositorio de GitHub Pages y abre la URL con `?build=rc1-007`.

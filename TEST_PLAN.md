@@ -1,22 +1,9 @@
-# Test Plan — RC1 Build 006
+# Test Plan — RC1 Build 007
 
-## 1. Base de datos / Garaje
-1. Abrir GT7 DB.
-2. Filtrar por categoría o buscar por marca.
-3. Añadir varios coches seguidos.
-4. Confirmar que la lista permanece abierta y el filtro se conserva.
-5. Ir a Garaje y verificar que aparecen los coches añadidos.
-
-## 2. Campeonato
-1. Crear un campeonato.
-2. Seleccionar coches desde el Garaje filtrado.
-3. Añadir calendario.
-4. Guardar campeonato.
-
-## 3. Resultado completo
-1. Abrir Race Control.
-2. Registrar posiciones para todos los pilotos.
-3. Marcar pole y vuelta rápida.
-4. Guardar.
-5. Verificar clasificación actualizada.
-6. Comprobar que no permite posiciones repetidas.
+1. Abrir GT7 DB y comprobar que aparecen más coches que en Build 006.
+2. Filtrar por Gr.3 y añadir varios coches al Garaje GT7 sin que se cierre la lista.
+3. Crear campeonato Road Cars / Europe vs Japan 90s.
+4. Definir filtro con países Japón + Alemania + Italia + Reino Unido, años 1990-1999 y PR 450-650.
+5. Guardar el filtro como subcategoría.
+6. Seleccionar coches de pilotos y verificar que sólo aparecen coches compatibles del garaje.
+7. Crear calendario y registrar resultados completos.

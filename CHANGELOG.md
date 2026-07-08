@@ -1,9 +1,12 @@
-# Changelog
+# GT7 Championship Manager — RC1 Build 007
 
-## RC1 Build 006
-- Mejora: añadir coches al Garaje GT7 sin perder filtro ni listado abierto.
-- Mejora: resultado completo por todos los pilotos, no sólo jugador.
-- Mejora: validación de posiciones repetidas o fuera de rango.
-- Mejora: clasificación basada en resultados completos.
-- Mejora: persistencia migrada desde builds anteriores.
-- Pendiente: integración del catálogo completo oficial de coches GT7.
+## Cambios principales
+- Gran ampliación de la base de coches GT7.
+- Editor de filtros para categorías abiertas.
+- Posibilidad de guardar filtros como subcategorías reutilizables.
+- Selector de países ampliado y persistencia de plantillas de filtro.
+- Previsualización de coches compatibles con cada filtro.
+
+## Pendiente
+- Catálogo GT7 100 % completo y verificado para Build 008.
+- Revisión fina de PP/potencia/peso de todos los coches.
