@@ -1,10 +1,9 @@
-# Test Plan · v1.1 Build 004
+# Test Plan v1.2 Final
 
-1. Abrir app con datos existentes.
-2. Entrar en un coche del Garaje GT7.
-3. Editar PR y potencia.
-4. Cerrar y volver a abrir la ficha para comprobar persistencia.
-5. Crear/editar campeonato y comprobar que el selector usa los valores actualizados.
-6. Entrar en GT7 DB > Circuitos.
-7. Abrir varias fichas de circuitos y comprobar datos por variante.
-8. Verificar que campeonatos previos siguen cargando correctamente.
+1. Abrir con ?build=v1-2-final.
+2. Crear o abrir un campeonato existente.
+3. Abrir Race Control.
+4. Pulsar OCR asistido desde imagen.
+5. Subir una captura o pegar texto reconocido.
+6. Analizar, corregir posiciones y aplicar.
+7. Guardar resultado y comprobar clasificación.

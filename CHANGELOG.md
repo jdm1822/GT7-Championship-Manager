@@ -1,12 +1,7 @@
-# GT7 Championship Manager · v1.1 Build 004
+# Changelog
 
-## Cambios
-- PR y potencia editables por coche, conservando PR/potencia base.
-- Los valores personalizados se guardan en tus datos y se usan en filtros y campeonatos.
-- Circuitoteca ampliada con características por variante: longitud, curvas, desnivel, tipo y notas.
-- Las fichas de circuito muestran ahora una tabla por variante.
-- Se mantiene compatibilidad con datos RC1/v1.1 anteriores mediante migración automática.
-
-## Pendiente
-- OCR de resultados por imagen.
-- Revisión continua de catálogo GT7 tras futuras actualizaciones del juego.
+## v1.2 Final
+- Añadido OCR asistido para registrar resultados desde captura.
+- Se puede subir imagen, intentar OCR online o pegar texto desde Live Text/iOS.
+- Los resultados propuestos siempre requieren confirmación/corrección antes de aplicarse.
+- Se conserva compatibilidad con datos v1.1.

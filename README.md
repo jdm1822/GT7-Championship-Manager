@@ -1,3 +1,5 @@
-# GT7 Championship Manager · v1.1 Build 004
+# GT7 Championship Manager v1.2 Final
 
-Versión evolutiva compatible con los datos ya guardados. Incluye edición de PR/potencia por coche y circuitoteca con datos por variante.
+Versión estable con OCR asistido de resultados, confirmación manual, datos editables de coches y circuitoteca.
+
+Designed by JDM & ChatGPT.
