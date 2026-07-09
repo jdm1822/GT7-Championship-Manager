@@ -1,10 +1,11 @@
-# Changelog — RC1 Build 010
+# GT7 Championship Manager — v1.1 Build 002
 
 ## Cambios
-- Versionado visible corregido a RC1 Build 010.
-- Documentación normalizada para cierre de RC1.
-- Mantiene las mejoras validadas en Build 009: filtros inteligentes, Garaje GT7 separado, edición de campeonatos, resultados completos y desplegables persistentes.
+- Auditoría amplia de la base de datos de coches GT7.
+- Sustituido el catálogo parcial por una importación estructurada desde la base pública gt7info/GTDB.
+- Catálogo incluido: **575 coches**.
+- Incluye Alpine A220 Race Car '68 y Mercedes-AMG SLS AMG Gr.4.
+- Mantiene compatibilidad con datos guardados de RC1/v1.1 Build 001.
 
-## Pendiente de validación
-- Confirmar si el flujo sirve para iniciar un campeonato completo real.
-- Revisar si queda algún coche/circuito imprescindible pendiente antes de RC1 Final.
+## Nota
+Se conservan tus datos. La potencia aparece cuando la app ya tenía dato fiable; el PR/PP se importa para muchos modelos desde stockperf y se irá normalizando donde falte.

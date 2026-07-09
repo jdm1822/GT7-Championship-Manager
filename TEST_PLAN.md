@@ -1,18 +1,8 @@
-# Test Plan — RC1 Build 010
+# Test Plan — v1.1 Build 002
 
-## Prueba principal
-1. Limpiar caché o abrir con `?build=rc1-010`.
-2. Entrar en Base de datos GT7.
-3. Añadir varios coches al Garaje GT7 manteniendo desplegables abiertos.
-4. Crear campeonato.
-5. Definir reglas generales antes del calendario.
-6. Añadir circuitos y variantes.
-7. Personalizar una carrera y dejar otra con reglamento general.
-8. Asignar coche a cada piloto desde el Garaje filtrado.
-9. Abrir el campeonato y revisar pilotos, circuitos, reglas y particularidades.
-10. Registrar resultados de todos los pilotos.
-11. Revisar clasificación.
-12. Probar editar, duplicar, archivar y eliminar campeonato.
-
-## Criterio de aceptación
-La Build 010 puede pasar a RC1 Final si permite preparar una temporada completa sin bloqueos críticos.
+1. Abrir la app con datos existentes y comprobar que el garaje se conserva.
+2. Ir a Base GT7 y buscar Alpine A220.
+3. Buscar SLS AMG Gr.4.
+4. Revisar fabricantes: Alpine, AMG, Mercedes-Benz, Porsche, Ferrari, Toyota, Nissan.
+5. Añadir varios coches seguidos al Garaje GT7.
+6. Crear campeonato y comprobar filtros por categoría.
