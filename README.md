@@ -1,5 +1,3 @@
-# GT7 Championship Manager v1.2 Final
+# GT7 Championship Manager v1.2.1 Fix
 
-Versión estable con OCR asistido de resultados, confirmación manual, datos editables de coches y circuitoteca.
-
-Designed by JDM & ChatGPT.
+Corrección de la versión v1.2: recupera la creación de campeonatos y añade eliminación definitiva desde papelera.

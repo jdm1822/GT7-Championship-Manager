@@ -1,9 +1,7 @@
-# Test Plan v1.2 Final
+# Test Plan v1.2.1 Fix
 
-1. Abrir con ?build=v1-2-final.
-2. Crear o abrir un campeonato existente.
-3. Abrir Race Control.
-4. Pulsar OCR asistido desde imagen.
-5. Subir una captura o pegar texto reconocido.
-6. Analizar, corregir posiciones y aplicar.
-7. Guardar resultado y comprobar clasificación.
+1. Abrir Inicio y pulsar Crear campeonato.
+2. Abrir Campeonatos y pulsar Nuevo.
+3. Avanzar por Identidad > Reglas > Pilotos > Calendario.
+4. Eliminar un campeonato y comprobar Restaurar / Eliminar definitivo en Ajustes.
+5. Verificar que datos previos siguen presentes.
