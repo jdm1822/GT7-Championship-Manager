@@ -1,8 +1,12 @@
-# GT7 Championship Manager — v1.1 Build 003
+# GT7 Championship Manager · v1.1 Build 004
 
-- Añadida ficha completa de coche al pulsar en cualquier coche.
-- Añadida circuitoteca GT7 con localizaciones, variantes y características básicas.
-- Añadido contador Mi Garaje / Base GT7 / Pendientes / % completado.
-- Añadidos filtros por fabricante y modelo dentro del editor de subcategorías.
-- Añadido recordatorio de OCR pendiente en Ajustes.
-- Mantiene compatibilidad con datos RC1/v1.1 anteriores.
+## Cambios
+- PR y potencia editables por coche, conservando PR/potencia base.
+- Los valores personalizados se guardan en tus datos y se usan en filtros y campeonatos.
+- Circuitoteca ampliada con características por variante: longitud, curvas, desnivel, tipo y notas.
+- Las fichas de circuito muestran ahora una tabla por variante.
+- Se mantiene compatibilidad con datos RC1/v1.1 anteriores mediante migración automática.
+
+## Pendiente
+- OCR de resultados por imagen.
+- Revisión continua de catálogo GT7 tras futuras actualizaciones del juego.

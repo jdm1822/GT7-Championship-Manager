@@ -1,7 +1,3 @@
-# GT7 Championship Manager v1.1 Build 003
+# GT7 Championship Manager · v1.1 Build 004
 
-Sube el contenido de esta carpeta al repositorio GitHub Pages.
-
-Abrir con `?build=v1-1-003`.
-
-Esta build mantiene tus datos locales y amplía la Biblioteca GT7 con fichas de coche y circuitoteca.
+Versión evolutiva compatible con los datos ya guardados. Incluye edición de PR/potencia por coche y circuitoteca con datos por variante.
