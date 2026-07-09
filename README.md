@@ -1,3 +1,3 @@
-# GT7 Championship Manager v1.2.1 Fix
+# GT7 Championship Manager v1.2.2 Fix
 
-Corrección de la versión v1.2: recupera la creación de campeonatos y añade eliminación definitiva desde papelera.
+Corrige los botones de Ajustes: exportar, importar, reset, restaurar y eliminar definitivo desde Papelera. Mantiene OCR asistido y compatibilidad con datos existentes.

@@ -25,7 +25,7 @@
 </div></nav>
 <div id="modal" class="modal hidden" onclick="closeModal(event)"><div class="sheet" id="sheet" onclick="event.stopPropagation()"></div></div>
 <script>
-const BUILD='v1.2.1 Fix';
+const BUILD='v1.2.2 Fix';
 const DATA_SCHEMA=3;
 const PRESET_CATEGORIES=['Gr.1','Gr.2','Gr.3','Gr.4','Gr.B','Formula GT7','VGT','Road Cars','Deportivos Modernos','Deportivos Clásicos','American Sportcars','American Classics','Personalizada'];
 const COUNTRIES={JP:'Japón',US:'Estados Unidos',DE:'Alemania',IT:'Italia',FR:'Francia',GB:'Reino Unido',KR:'Corea',SE:'Suecia',AT:'Austria',CZ:'Chequia',CA:'Canadá',NL:'Países Bajos',AU:'Australia',ES:'España',CH:'Suiza',CN:'China'};
@@ -71,7 +71,7 @@ function renderChampionships(v){let html=`<div class="row"><h1>Campeonatos</h1><
 function filterCarsFor(ctx){let cars=[...CARS]; const f=ctx?.filter||DEFAULT_FILTERS[ctx?.category]||DEFAULT_FILTERS[ctx?.subcategory]||{}; if(f.cats)cars=cars.filter(c=>f.cats.includes(c.cat)); if(f.road)cars=cars.filter(c=>c.cat==='Road Cars'); if(f.excludeRace)cars=cars.filter(c=>!['Gr.1','Gr.2','Gr.3','Gr.4','Gr.B','Formula GT7','VGT'].includes(c.cat)); if(f.brandText)cars=cars.filter(c=>String(c.m||'').toLowerCase().includes(String(f.brandText).toLowerCase())); if(f.modelText)cars=cars.filter(c=>String(c.n||'').toLowerCase().includes(String(f.modelText).toLowerCase())); if(f.countries?.length)cars=cars.filter(c=>f.countries.includes(c.country)); if(f.yearMin)cars=cars.filter(c=>c.y>=f.yearMin); if(f.yearMax)cars=cars.filter(c=>c.y<=f.yearMax); if(f.ppMin)cars=cars.filter(c=>(Number(carPP(c))||0)>=f.ppMin); if(f.ppMax)cars=cars.filter(c=>(Number(carPP(c))||9999)<=f.ppMax); return cars.sort((a,b)=>a.m.localeCompare(b.m)||a.y-b.y)}
 function renderGarage(v){let q=''; const owned=CARS.filter(c=>state.garage.includes(c.id)); const pending=Math.max(0,CARS.length-owned.length); let html=`<div class="row"><h1>Garaje GT7</h1><button class="ghost" onclick="go('database')">Añadir coches</button></div><div class="grid"><div class="kpi"><span class="muted">Mi garaje</span><br><b>${owned.length}</b></div><div class="kpi"><span class="muted">Base GT7</span><br><b>${CARS.length}</b></div><div class="kpi"><span class="muted">Pendientes</span><br><b>${pending}</b></div><div class="kpi"><span class="muted">Completado</span><br><b>${CARS.length?Math.round(owned.length/CARS.length*100):0}%</b></div></div><p class="muted">Tus coches marcados como disponibles en GT7.</p><div class="searchbar"><input id="gq" placeholder="Buscar en mi garaje..." oninput="renderGarageList(this.value)"></div><div id="garageList"></div>`; v.innerHTML=html; renderGarageList(q)}
 function renderGarageList(q=''){const el=document.getElementById('garageList'); if(!el)return; const owned=CARS.filter(c=>state.garage.includes(c.id)&&(`${c.m} ${c.n} ${c.y}`.toLowerCase().includes(q.toLowerCase()))); if(!owned.length){el.innerHTML='<div class="empty">No hay coches en tu garaje con ese filtro.</div>';return} const groups={}; owned.forEach(c=>(groups[c.m]??=[]).push(c)); let html=''; Object.keys(groups).sort().forEach(m=>{html+=`<details open><summary>${esc(m)} (${groups[m].length})</summary>`; groups[m].sort((a,b)=>a.y-b.y).forEach(c=>html+=carRow(c,true)); html+='</details>'}); el.innerHTML=html}
-function renderDatabase(v){let html=`<div class="row"><h1>Base de datos GT7</h1><span class="pill">${CARS.length} coches</span></div><p class="hint">v1.2.1 Fix: corrige creación de campeonatos y papelera definitiva.</p><div class="actions"><button class="${dbSection==='cars'?'primary':'ghost'}" onclick="dbSection='cars';render()">🚗 Coches</button><button class="${dbSection==='tracks'?'primary':'ghost'}" onclick="dbSection='tracks';render()">🏁 Circuitos</button></div>${dbSection==='cars'?`<div class="searchbar"><div class="split"><input id="dbq" placeholder="Buscar coche, marca, año..." value="${esc(dbFilter.q)}" oninput="dbFilter.q=this.value;renderDBList()"><select id="dbcat" onchange="dbFilter.cat=this.value;renderDBList()"><option value="">Todas las categorías</option>${PRESET_CATEGORIES.map(c=>`<option ${dbFilter.cat===c?'selected':''}>${c}</option>`).join('')}</select></div></div><div id="dbList"></div>`:`<div id="trackList"></div>`}`; v.innerHTML=html; if(dbSection==='cars')renderDBList(); else renderTrackDB()}
+function renderDatabase(v){let html=`<div class="row"><h1>Base de datos GT7</h1><span class="pill">${CARS.length} coches</span></div><p class="hint">v1.2.2 Fix: corrige Ajustes, importar/exportar/reset y papelera definitiva.</p><div class="actions"><button class="${dbSection==='cars'?'primary':'ghost'}" onclick="dbSection='cars';render()">🚗 Coches</button><button class="${dbSection==='tracks'?'primary':'ghost'}" onclick="dbSection='tracks';render()">🏁 Circuitos</button></div>${dbSection==='cars'?`<div class="searchbar"><div class="split"><input id="dbq" placeholder="Buscar coche, marca, año..." value="${esc(dbFilter.q)}" oninput="dbFilter.q=this.value;renderDBList()"><select id="dbcat" onchange="dbFilter.cat=this.value;renderDBList()"><option value="">Todas las categorías</option>${PRESET_CATEGORIES.map(c=>`<option ${dbFilter.cat===c?'selected':''}>${c}</option>`).join('')}</select></div></div><div id="dbList"></div>`:`<div id="trackList"></div>`}`; v.innerHTML=html; if(dbSection==='cars')renderDBList(); else renderTrackDB()}
 function rememberDbOpen(){document.querySelectorAll('#dbList details').forEach(d=>{const brand=d.dataset.brand;if(!brand)return; if(d.open)dbOpenBrands.add(brand); else dbOpenBrands.delete(brand);});}
 function renderDBList(){rememberDbOpen();const q=(document.getElementById('dbq')?.value??dbFilter.q).toLowerCase();const cat=document.getElementById('dbcat')?.value??dbFilter.cat;dbFilter={q:document.getElementById('dbq')?.value||'',cat};let arr=CARS.filter(c=>(!cat||c.cat===cat||c.sub===cat)&&(`${c.m} ${c.n} ${c.y} ${c.cat}`.toLowerCase().includes(q))); const groups={};arr.forEach(c=>(groups[c.m]??=[]).push(c)); let html=''; Object.keys(groups).sort().forEach(m=>{const shouldOpen=(q||cat||dbOpenBrands.has(m));html+=`<details data-brand="${esc(m)}" ${shouldOpen?'open':''} ontoggle="if(this.open)dbOpenBrands.add(this.dataset.brand);else dbOpenBrands.delete(this.dataset.brand)"><summary>${esc(m)} (${groups[m].length})</summary>`; groups[m].sort((a,b)=>a.y-b.y).forEach(c=>html+=carRow(c,state.garage.includes(c.id))); html+='</details>'}); const target=document.getElementById('dbList'); if(target)target.innerHTML=html||'<div class="empty">Sin resultados.</div>'}
 function carRow(c,owned){return `<div class="list-item car"><div onclick="showCarDetails('${c.id}')" style="cursor:pointer"><div class="car-title">${esc(c.n)} <span class="muted">${c.y?"'"+String(c.y).slice(-2):''}</span></div><div class="meta">${esc(c.m)} · ${esc(c.cat)} · ${esc(c.sub)} · ${COUNTRIES[c.country]||c.country}<br>PR ${carPP(c)??'—'} · ${carPower(c)??'—'} CV · ${esc(c.drive||'')}</div></div><div class="actions"><button class="small ghost" onclick="showCarDetails('${c.id}')">Ficha</button><button class="small ${owned?'good ghost':'primary'}" onclick="toggleGarage('${c.id}')">${owned?'En garaje':'Añadir'}</button></div></div>`}
@@ -123,12 +123,95 @@ function openChampMenu(id){const ch=state.championships.find(c=>c.id===id); show
 function duplicateChamp(id){const ch=JSON.parse(JSON.stringify(state.championships.find(c=>c.id===id))); ch.id=uid('ch'); ch.name+=' (copia)'; ch.calendar.forEach(r=>{r.id=uid('race');r.result=null}); state.championships.push(ch); save(); hideModal(); render()}
 function archiveChamp(id){const ch=state.championships.find(c=>c.id===id); ch.status='Archivado'; save(); hideModal(); render()}
 function deleteChamp(id){if(!confirm('¿Eliminar este campeonato? Se moverá a papelera.'))return; const i=state.championships.findIndex(c=>c.id===id); if(i>=0){state.trash.push(state.championships[i]);state.championships.splice(i,1); if(state.active===id)state.active=state.championships[0]?.id||null; save(); hideModal(); render()}}
-function renderSettings(v){v.innerHTML=`<h1>Ajustes</h1><div class="card"><h2>Datos</h2><p class="muted">Exporta o importa todo tu progreso.</p><div class="actions"><button onclick="exportData()">Exportar</button><button onclick="importData()">Importar</button><button class="danger" onclick="resetData()">Reset</button></div></div><div class="card"><h2>OCR de resultados</h2><p class="muted">Disponible como OCR asistido: subes una captura, la app intenta leerla si hay conexión y siempre te deja pegar texto de Live Text/iOS para proponer posiciones.</p><span class="pill good">Activo · Confirmación manual</span></div><div class="card"><h2>Papelera</h2>${state.trash.length?state.trash.map((c,i)=>`<div class="list-item"><div class="row"><div>${esc(c.name)}</div><div class="actions"><button class="small" onclick="restoreTrash(${i})">Restaurar</button><button class="small danger" onclick="purgeTrash(${i})">Eliminar definitivo</button></div></div></div>`).join(''):'<div class="empty">Papelera vacía.</div>'}</div><div class="card"><h2>Acerca de</h2><p class="muted">${BUILD}<br>Designed by JDM & ChatGPT</p><p class="hint">v1.2.1 Fix: OCR asistido, creación de campeonatos corregida y papelera definitiva.</p></div>`}
+function renderSettings(v){v.innerHTML=`<h1>Ajustes</h1><div class="card"><h2>Datos</h2><p class="muted">Exporta o importa todo tu progreso.</p><div class="actions"><button onclick="exportData()">Exportar</button><button onclick="importData()">Importar</button><button class="danger" onclick="resetData()">Reset</button></div></div><div class="card"><h2>OCR de resultados</h2><p class="muted">Disponible como OCR asistido: subes una captura, la app intenta leerla si hay conexión y siempre te deja pegar texto de Live Text/iOS para proponer posiciones.</p><span class="pill good">Activo · Confirmación manual</span></div><div class="card"><h2>Papelera</h2>${state.trash.length?state.trash.map((c,i)=>`<div class="list-item"><div class="row"><div>${esc(c.name)}</div><div class="actions"><button class="small" onclick="restoreTrash(${i})">Restaurar</button><button class="small danger" onclick="purgeTrash(${i})">Eliminar definitivo</button></div></div></div>`).join(''):'<div class="empty">Papelera vacía.</div>'}</div><div class="card"><h2>Acerca de</h2><p class="muted">${BUILD}<br>Designed by JDM & ChatGPT</p><p class="hint">v1.2.2 Fix: OCR asistido, creación de campeonatos y botones de Ajustes corregidos.</p></div>`}
 function showCarDetails(id){const c=byId(id); if(!c)return; const owned=state.garage.includes(id); const o=carOverride(id); show(`<div class="row"><h2>${esc(c.m)} ${esc(c.n)}</h2><button class="ghost small" onclick="hideModal()">Cerrar</button></div><div class="grid"><div class="kpi"><span class="muted">PR actual</span><br><b>${carPP(c)||'—'}</b></div><div class="kpi"><span class="muted">Potencia actual</span><br><b>${carPower(c)||'—'}${carPower(c)?' CV':''}</b></div><div class="kpi"><span class="muted">PR base</span><br><b>${c.pp||'—'}</b></div><div class="kpi"><span class="muted">Potencia base</span><br><b>${c.power||'—'}${c.power?' CV':''}</b></div></div><div class="card"><div class="section-title">Tus datos editables</div><p class="hint">Modifica estos valores si has preparado el coche en GT7. La app conservará el valor base y usará tu último dato guardado para filtros y campeonatos.</p><div class="split"><div class="field"><label>PR actual</label><input id="car_pp_edit" type="number" step="0.01" value="${esc(o.pp!==undefined?o.pp:(c.pp||''))}"></div><div class="field"><label>Potencia actual (CV)</label><input id="car_power_edit" type="number" step="1" value="${esc(o.power!==undefined?o.power:(c.power||''))}"></div></div><div class="actions"><button class="primary" onclick="saveCarTuning('${c.id}')">Guardar datos del coche</button><button class="ghost" onclick="resetCarTuning('${c.id}')">Restaurar base</button></div></div><div class="card"><div class="section-title">Características</div><table class="table"><tr><th>Fabricante</th><td>${esc(c.m)}</td></tr><tr><th>Modelo</th><td>${esc(c.n)}</td></tr><tr><th>Año</th><td>${esc(c.y||'—')}</td></tr><tr><th>Categoría</th><td>${esc(c.cat||'—')}</td></tr><tr><th>Subcategoría</th><td>${esc(c.sub||'—')}</td></tr><tr><th>País</th><td>${esc(COUNTRIES[c.country]||c.country||'—')}</td></tr><tr><th>Tipo</th><td>${esc(c.type||'—')}</td></tr><tr><th>Tracción</th><td>${esc(c.drive||'—')}</td></tr><tr><th>ID base</th><td>${esc(c.id)}</td></tr></table></div><div class="actions"><button class="${owned?'ghost':'primary'}" onclick="toggleGarage('${c.id}');showCarDetails('${c.id}')">${owned?'Quitar de mi garaje':'Añadir a mi garaje'}</button></div>`)}
 function saveCarTuning(id){state.carOverrides=state.carOverrides||{}; state.carOverrides[id]={pp:val('car_pp_edit'),power:val('car_power_edit')}; save(); showCarDetails(id);}
 function resetCarTuning(id){if(state.carOverrides)delete state.carOverrides[id]; save(); showCarDetails(id);}
 function renderTrackDB(){const grouped={};TRACKS.forEach(t=>(grouped[t.country]??=[]).push(t));let html=`<div class="card"><h2>Circuitoteca GT7</h2><p class="muted">Circuitos y variantes con longitud, curvas, desnivel y notas de uso. Sin imágenes para mantener la app ligera.</p><div class="grid"><div class="kpi"><span class="muted">Localizaciones</span><br><b>${TRACKS.length}</b></div><div class="kpi"><span class="muted">Variantes</span><br><b>${TRACKS.reduce((a,t)=>a+(t.layouts?.length||0),0)}</b></div></div></div>`;Object.keys(grouped).sort().forEach(country=>{html+=`<details open><summary>${esc(country)} (${grouped[country].length})</summary>`;grouped[country].sort((a,b)=>a.name.localeCompare(b.name)).forEach(t=>{const surface=t.surface||'asphalt';const first=t.layouts?.[0]||{};html+=`<div class="list-item car"><div><div class="car-title">${esc(t.name)}</div><div class="meta">${esc(country)} · ${surface==='dirt'?'Tierra':surface==='snow'?'Nieve':'Asfalto'} · ${t.layouts.length} variantes<br>${esc(layoutInfo(t,layoutName(first))||'Ficha disponible')}</div></div><button class="small ghost" onclick="showTrackDetails('${String(t.name).replace(/'/g,"\'")}')">Ficha</button></div>`});html+='</details>'});document.getElementById('trackList').innerHTML=html}
 function showTrackDetails(name){const t=TRACKS.find(x=>x.name===name);if(!t)return;const surface=t.surface||'asphalt';show(`<div class="row"><h2>${esc(t.name)}</h2><button class="ghost small" onclick="hideModal()">Cerrar</button></div><div class="grid"><div class="kpi"><span class="muted">País</span><br><b>${esc(t.country)}</b></div><div class="kpi"><span class="muted">Superficie</span><br><b>${surface==='dirt'?'Tierra':surface==='snow'?'Nieve':'Asfalto'}</b></div><div class="kpi"><span class="muted">Variantes</span><br><b>${t.layouts.length}</b></div><div class="kpi"><span class="muted">Uso</span><br><b>${surface==='asphalt'||!t.surface?'Campeonato':'Excluido'}</b></div></div><div class="card"><div class="section-title">Variantes y características</div><table class="table"><tr><th>Variante</th><th>Longitud</th><th>Curvas</th><th>Desnivel</th></tr>${t.layouts.map(l=>`<tr><td><b>${esc(layoutName(l))}</b><br><span class="muted">${esc(l.type||'')}</span></td><td>${esc(l.length||'—')}</td><td>${esc(l.corners??'—')}</td><td>${esc(l.elevation||'—')}</td></tr><tr><td colspan="4" class="hint">${esc(l.notes||'')}</td></tr>`).join('')}</table></div><p class="hint">Datos de referencia para preparar calendarios. Las imágenes de circuitos quedan fuera por ahora para no hacer pesada la app.</p>`)}
+
+function exportData(){
+  try{
+    const payload={
+      app:'GT7 Championship Manager',
+      build:BUILD,
+      schema:DATA_SCHEMA,
+      exportedAt:new Date().toISOString(),
+      data:state
+    };
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    const stamp=new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
+    a.href=url;
+    a.download=`gt7cm_backup_${stamp}.json`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);
+  }catch(e){
+    alert('No se ha podido exportar la copia de seguridad.');
+  }
+}
+function importData(){
+  const input=document.createElement('input');
+  input.type='file';
+  input.accept='.json,application/json';
+  input.onchange=()=>{
+    const file=input.files&&input.files[0];
+    if(!file)return;
+    const reader=new FileReader();
+    reader.onload=()=>{
+      try{
+        const raw=JSON.parse(reader.result);
+        const imported=raw.data||raw;
+        if(!imported || typeof imported!=='object')throw new Error('invalid');
+        const currentBackup={app:'GT7 Championship Manager',build:BUILD,schema:DATA_SCHEMA,exportedAt:new Date().toISOString(),data:state};
+        try{localStorage.setItem('gt7cm_backup_before_import_'+Date.now(),JSON.stringify(currentBackup));}catch(_e){}
+        state=migrateState(imported);
+        save();
+        alert('Importación completada.');
+        hideModal();
+        render();
+      }catch(e){
+        alert('Archivo no válido o copia incompatible.');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+function resetData(){
+  const ok=confirm('Esto borrará garaje, campeonatos, filtros, reglamentos y resultados guardados en este dispositivo. ¿Continuar?');
+  if(!ok)return;
+  const ok2=confirm('Confirmación final: se creará una copia automática antes de borrar.');
+  if(!ok2)return;
+  try{localStorage.setItem('gt7cm_backup_before_reset_'+Date.now(),JSON.stringify({app:'GT7 Championship Manager',build:BUILD,schema:DATA_SCHEMA,exportedAt:new Date().toISOString(),data:state}));}catch(e){}
+  localStorage.removeItem(STORE);
+  state=load();
+  active='home';
+  hideModal();
+  render();
+}
+function restoreTrash(i){
+  i=Number(i);
+  if(!state.trash || !state.trash[i])return;
+  const ch=state.trash.splice(i,1)[0];
+  ch.status=ch.status==='Eliminado'?'Preparación':(ch.status||'Preparación');
+  state.championships.push(ch);
+  if(!state.active)state.active=ch.id;
+  save();
+  render();
+}
+function purgeTrash(i){
+  i=Number(i);
+  if(!state.trash || !state.trash[i])return;
+  const name=state.trash[i].name||'este campeonato';
+  if(!confirm(`Eliminar definitivamente "${name}"? Esta acción no se puede deshacer.`))return;
+  state.trash.splice(i,1);
+  save();
+  render();
+}
+
 function openAbout(){show(`<h2>GT7 Championship Manager</h2><p class="muted">${BUILD}</p><p><b>Designed by JDM & ChatGPT</b></p><p class="hint">Aplicación PWA para gestionar campeonatos offline de Gran Turismo 7.</p><button class="primary" onclick="hideModal()">Cerrar</button>`)}
 function show(html){document.getElementById('sheet').innerHTML=html;document.getElementById('modal').classList.remove('hidden')}
 function hideModal(){document.getElementById('modal').classList.add('hidden')}
