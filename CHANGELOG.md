@@ -1,11 +1,8 @@
-# GT7 Championship Manager — v1.1 Build 002
+# GT7 Championship Manager — v1.1 Build 003
 
-## Cambios
-- Auditoría amplia de la base de datos de coches GT7.
-- Sustituido el catálogo parcial por una importación estructurada desde la base pública gt7info/GTDB.
-- Catálogo incluido: **575 coches**.
-- Incluye Alpine A220 Race Car '68 y Mercedes-AMG SLS AMG Gr.4.
-- Mantiene compatibilidad con datos guardados de RC1/v1.1 Build 001.
-
-## Nota
-Se conservan tus datos. La potencia aparece cuando la app ya tenía dato fiable; el PR/PP se importa para muchos modelos desde stockperf y se irá normalizando donde falte.
+- Añadida ficha completa de coche al pulsar en cualquier coche.
+- Añadida circuitoteca GT7 con localizaciones, variantes y características básicas.
+- Añadido contador Mi Garaje / Base GT7 / Pendientes / % completado.
+- Añadidos filtros por fabricante y modelo dentro del editor de subcategorías.
+- Añadido recordatorio de OCR pendiente en Ajustes.
+- Mantiene compatibilidad con datos RC1/v1.1 anteriores.

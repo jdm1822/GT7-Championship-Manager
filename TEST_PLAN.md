@@ -1,8 +1,8 @@
-# Test Plan — v1.1 Build 002
+# Plan de prueba v1.1 Build 003
 
-1. Abrir la app con datos existentes y comprobar que el garaje se conserva.
-2. Ir a Base GT7 y buscar Alpine A220.
-3. Buscar SLS AMG Gr.4.
-4. Revisar fabricantes: Alpine, AMG, Mercedes-Benz, Porsche, Ferrari, Toyota, Nissan.
-5. Añadir varios coches seguidos al Garaje GT7.
-6. Crear campeonato y comprobar filtros por categoría.
+1. Abrir Base de datos GT7 > Coches y pulsar “Ficha” en varios coches.
+2. Comprobar que se muestran PR, potencia, año, categoría, país, tipo e ID.
+3. Abrir Garaje GT7 y verificar contador Garaje/Base/Pendientes/% completado.
+4. Abrir Base de datos GT7 > Circuitos y revisar variantes.
+5. Crear/editar campeonato abierto y probar filtro por Fabricante contiene y Modelo contiene.
+6. Verificar que Importar/Exportar siguen funcionando.

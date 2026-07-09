@@ -1,11 +1,7 @@
-# GT7 Championship Manager — v1.1 Build 002
+# GT7 Championship Manager v1.1 Build 003
 
-Versión centrada en la auditoría de la base de coches.
+Sube el contenido de esta carpeta al repositorio GitHub Pages.
 
-## Incluye
-- Catálogo GT7 ampliado a 575 coches.
-- Base GT7 separada de Garaje GT7.
-- Compatibilidad con datos existentes.
-- Backup/migración según esquema v1.1.
+Abrir con `?build=v1-1-003`.
 
-Abre con `?build=v1-1-002`.
+Esta build mantiene tus datos locales y amplía la Biblioteca GT7 con fichas de coche y circuitoteca.
