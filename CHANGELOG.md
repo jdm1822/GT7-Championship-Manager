@@ -1,9 +1,9 @@
 # Changelog
 
-## v1.2.2 Fix
-- Corregidos botones de Ajustes.
-- Activado Exportar datos.
-- Activado Importar copia JSON.
-- Activado Reset con backup previo.
-- Activado Restaurar desde Papelera.
-- Activado Eliminar definitivo desde Papelera.
+## v1.2.3 Clean
+- Limpieza de versionado interno: título, cabecera y constante BUILD coinciden.
+- Conserva creación de campeonatos corregida.
+- Conserva OCR asistido con confirmación manual.
+- Conserva Exportar / Importar / Reset.
+- Conserva Restaurar y Eliminar definitivo desde Papelera.
+- Se elimina el archivo auxiliar obsoleto appcheck.js de la entrega.
