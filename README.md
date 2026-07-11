@@ -1,13 +1,10 @@
-# GT7 Championship Manager v1.2.5
+# GT7 Championship Manager v1.2.6
 
 Actualización compatible con los datos existentes.
 
-## Cambios
-- La categoría de cada coche sigue siendo editable desde un desplegable.
-- La subcategoría ahora se limita según la categoría seleccionada.
-- Al cambiar de categoría, el desplegable de subcategoría se actualiza automáticamente.
-- PR y potencia continúan como campos de texto editables.
-- Se conserva cualquier subcategoría personalizada ya guardada para evitar pérdida de datos.
-
-## Actualización
-Sustituye los archivos incluidos en este paquete. Conserva el resto de archivos del repositorio que ya utiliza tu instalación.
+## Novedades
+- Crear, renombrar y eliminar categorías de coches.
+- Crear, renombrar y eliminar subcategorías dentro de cada categoría.
+- Reasignación guiada al eliminar categorías o subcategorías en uso.
+- Exportación Excel `.xls` con tres hojas: Base GT7, Garaje GT7 y Circuitos.
+- La copia JSON de importación/exportación se mantiene sin cambios.

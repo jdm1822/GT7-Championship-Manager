@@ -1,7 +1,7 @@
 # Changelog
 
-## v1.2.5
-- Añadido desplegable de subcategorías dependiente de la categoría del coche.
-- Actualización inmediata de subcategorías al cambiar la categoría.
-- PR y potencia mantenidos como entradas libres de texto numérico.
-- Compatibilidad con subcategorías personalizadas existentes.
+## v1.2.6
+- Añadido gestor de categorías y subcategorías en Ajustes.
+- Añadida propagación de cambios a coches, campeonatos y papelera.
+- Añadida exportación Excel de coches y circuitos.
+- Conservada la compatibilidad con el esquema anterior mediante migración automática.
