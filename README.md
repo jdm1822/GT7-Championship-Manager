@@ -1,30 +1,13 @@
-# GT7 Championship Manager v1.2.3 Clean
+# GT7 Championship Manager v1.2.5
 
-Versión limpia y coherente tras la v1.2.2 Fix. Mantiene OCR asistido, creación de campeonatos, importación/exportación, reset, restauración desde papelera y eliminación definitiva.
+Actualización compatible con los datos existentes.
 
-Sube el contenido de esta carpeta a la raíz del repositorio de GitHub Pages.
+## Cambios
+- La categoría de cada coche sigue siendo editable desde un desplegable.
+- La subcategoría ahora se limita según la categoría seleccionada.
+- Al cambiar de categoría, el desplegable de subcategoría se actualiza automáticamente.
+- PR y potencia continúan como campos de texto editables.
+- Se conserva cualquier subcategoría personalizada ya guardada para evitar pérdida de datos.
 
-
-## Instalación limpia recomendada
-
-Esta build es standalone: la aplicación está contenida en index.html y no necesita app.js, app.css, cars.js, circuits.js ni appcheck.js.
-
-Archivos que deben quedar en el repositorio:
-- index.html
-- README.md
-- CHANGELOG.md
-- TEST_PLAN.md
-- manifest.webmanifest
-- sw.js
-- icon-180.png
-- icon-192.png
-- icon-512.png
-
-Eliminar del repositorio si existen:
-- app.js
-- app.css
-- appcheck.js
-- cars.js
-- circuits.js
-- styles.css
-- script.js
+## Actualización
+Sustituye los archivos incluidos en este paquete. Conserva el resto de archivos del repositorio que ya utiliza tu instalación.

@@ -1,9 +1,7 @@
 # Changelog
 
-## v1.2.3 Clean
-- Limpieza de versionado interno: título, cabecera y constante BUILD coinciden.
-- Conserva creación de campeonatos corregida.
-- Conserva OCR asistido con confirmación manual.
-- Conserva Exportar / Importar / Reset.
-- Conserva Restaurar y Eliminar definitivo desde Papelera.
-- Se elimina el archivo auxiliar obsoleto appcheck.js de la entrega.
+## v1.2.5
+- Añadido desplegable de subcategorías dependiente de la categoría del coche.
+- Actualización inmediata de subcategorías al cambiar la categoría.
+- PR y potencia mantenidos como entradas libres de texto numérico.
+- Compatibilidad con subcategorías personalizadas existentes.

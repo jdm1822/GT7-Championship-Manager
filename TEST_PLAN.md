@@ -1,11 +1,9 @@
-# Test Plan v1.2.3 Clean
+# Plan de prueba v1.2.5
 
-1. Abrir la app y comprobar que aparece v1.2.3 Clean.
-2. Crear un campeonato nuevo desde Inicio y desde Campeonatos.
-3. Probar Exportar datos.
-4. Probar Importar datos con una copia JSON válida.
-5. Probar Reset.
-6. Enviar un campeonato a Papelera.
-7. Restaurarlo.
-8. Enviar otro campeonato a Papelera y probar Eliminar definitivo.
-9. Probar OCR asistido: subir imagen o pegar texto con Live Text, revisar propuesta y confirmar manualmente.
+1. Abrir la ficha de un coche.
+2. Confirmar que PR y potencia se pueden escribir libremente.
+3. Cambiar la categoría a Gr.3 y comprobar que la subcategoría ofrece opciones de Gr.3/GT3.
+4. Cambiar la categoría a Road Cars y comprobar que aparecen subcategorías de coches de calle y plantillas personales.
+5. Guardar y cerrar la ficha.
+6. Volver a abrirla y confirmar que categoría, subcategoría, PR y potencia se mantienen.
+7. Pulsar Restaurar datos base y confirmar la recuperación de los valores originales.
