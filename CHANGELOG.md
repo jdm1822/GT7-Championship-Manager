@@ -1,7 +1,7 @@
 # Changelog
 
-## v1.2.6
-- Añadido gestor de categorías y subcategorías en Ajustes.
-- Añadida propagación de cambios a coches, campeonatos y papelera.
-- Añadida exportación Excel de coches y circuitos.
-- Conservada la compatibilidad con el esquema anterior mediante migración automática.
+## v1.2.7
+- Añadido filtro de categoría y subcategoría en Base GT7 y Garaje.
+- Añadido filtro de categoría y subcategoría al elegir coche para cada piloto.
+- Conservados como filtros adicionales los criterios de año, país, PR, fabricante y modelo.
+- Datos anteriores compatibles.

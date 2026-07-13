@@ -1,10 +1,9 @@
-# GT7 Championship Manager v1.2.6
+# GT7 Championship Manager v1.2.7
 
-Actualización compatible con los datos existentes.
+Actualización compatible con los datos de v1.2.6.
 
 ## Novedades
-- Crear, renombrar y eliminar categorías de coches.
-- Crear, renombrar y eliminar subcategorías dentro de cada categoría.
-- Reasignación guiada al eliminar categorías o subcategorías en uso.
-- Exportación Excel `.xls` con tres hojas: Base GT7, Garaje GT7 y Circuitos.
-- La copia JSON de importación/exportación se mantiene sin cambios.
+- Filtro por categoría y subcategoría en Base GT7.
+- Filtro por categoría y subcategoría en Garaje GT7.
+- Selector de coches del campeonato con categoría y subcategoría visibles y editables.
+- Los filtros inteligentes de fabricante/modelo, año, país y PR siguen aplicándose adicionalmente.
