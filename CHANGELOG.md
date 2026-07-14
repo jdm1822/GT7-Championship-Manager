@@ -1,7 +1,10 @@
 # Changelog
 
-## v1.2.7
-- Añadido filtro de categoría y subcategoría en Base GT7 y Garaje.
-- Añadido filtro de categoría y subcategoría al elegir coche para cada piloto.
-- Conservados como filtros adicionales los criterios de año, país, PR, fabricante y modelo.
-- Datos anteriores compatibles.
+## v1.2.8 Robust
+- Nuevo Service Worker con invalidación de caché por versión.
+- Limpieza automática de cachés antiguas.
+- Copias automáticas locales con restauración.
+- Recuperación automática de la última copia si falla la lectura principal.
+- Exportación JSON accesible desde Inicio.
+- Indicador de conexión offline/online.
+- Número de versión centralizado.

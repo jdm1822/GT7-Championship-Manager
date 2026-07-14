@@ -1,8 +1,10 @@
-# Plan de prueba v1.2.7
+# Plan de pruebas v1.2.8 Robust
 
-1. En Base GT7, filtrar por categoría y después por subcategoría.
-2. Repetir en Garaje GT7.
-3. Crear/editar campeonato y definir categoría, subcategoría y filtros adicionales.
-4. En Pilotos, pulsar Elegir coche y comprobar que categoría + subcategoría se aplican antes que año/país/PR.
-5. Confirmar que la selección vuelve al asistente sin perder datos.
-6. Verificar que campeonatos y garaje anteriores siguen presentes.
+1. Abrir la app y comprobar que muestra v1.2.8 Robust.
+2. Confirmar que garaje y campeonatos anteriores siguen presentes.
+3. Añadir un coche y verificar que aparece una copia automática en Ajustes.
+4. Crear o editar un campeonato y comprobar una nueva copia automática.
+5. Exportar JSON desde Inicio.
+6. Restaurar una copia automática y verificar los datos.
+7. Abrir sin conexión después de haber abierto una vez con conexión.
+8. Volver a conectar y comprobar que la app sigue funcionando.

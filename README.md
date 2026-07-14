@@ -1,9 +1,14 @@
-# GT7 Championship Manager v1.2.7
+# GT7 Championship Manager v1.2.8 Robust
 
-Actualización compatible con los datos de v1.2.6.
+Versión centrada en fiabilidad y protección de datos.
 
 ## Novedades
-- Filtro por categoría y subcategoría en Base GT7.
-- Filtro por categoría y subcategoría en Garaje GT7.
-- Selector de coches del campeonato con categoría y subcategoría visibles y editables.
-- Los filtros inteligentes de fabricante/modelo, año, país y PR siguen aplicándose adicionalmente.
+- Copias automáticas locales (hasta 10).
+- Restauración desde Ajustes.
+- Recuperación automática si el estado principal no puede leerse.
+- Botón de exportación rápida en Inicio.
+- Service Worker renovado con estrategia network-first y limpieza de cachés antiguas.
+- Versionado unificado en toda la interfaz.
+
+## Actualización
+Sustituye los archivos incluidos en este paquete. No es necesario eliminar los archivos antiguos que no estén referenciados por `index.html`.

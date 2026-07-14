@@ -1,1 +1,7 @@
-self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('fetch',e=>{});
+const CACHE_NAME='gt7cm-shell-v1.2.8-robust';
+const SHELL=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(CACHE_NAME);await cache.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})));await self.skipWaiting()})())});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim()})())});
+self.addEventListener('message',event=>{if(event.data&&event.data.type==='SKIP_WAITING')self.skipWaiting()});
+async function networkFirst(request){const cache=await caches.open(CACHE_NAME);try{const response=await fetch(request,{cache:'no-store'});if(response&&response.ok)await cache.put(request,response.clone());return response}catch(e){const cached=await cache.match(request,{ignoreSearch:true});if(cached)return cached;throw e}}
+self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET')return;const url=new URL(req.url);if(url.origin!==self.location.origin)return;if(req.mode==='navigate'){event.respondWith(networkFirst(new Request('./index.html',{headers:req.headers})).catch(()=>caches.match('./index.html')));return}event.respondWith(networkFirst(req).catch(()=>caches.match(req,{ignoreSearch:true}))) });
